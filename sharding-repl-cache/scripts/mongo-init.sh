@@ -71,8 +71,3 @@ use somedb;
 for(var i = 0; i < 1000; i++) db.helloDoc.insertOne({age:i, name:"ly"+i});
 exit();
 EOF
-
-docker compose exec -T redis_1 sh <<EOF
-echo "yes" | redis-cli --cluster create 173.17.0.10:6379 173.17.0.11:6379 173.17.0.12:6379 173.17.0.13:6379 173.17.0.14:6379 173.17.0.15:6379 --cluster-replicas 1
-EOF
-
