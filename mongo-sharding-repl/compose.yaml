@@ -22,8 +22,6 @@ services:
     image: mongo:latest
     container_name: router
     restart: always
-    ports:
-      - "27015:27017"
     networks:
       app-network:
         ipv4_address: 173.17.0.6
@@ -53,8 +51,6 @@ services:
     image: mongo:latest # docker образ
     container_name: configSrv
     restart: always
-    ports:
-      - "27017:27017"
     networks:
       app-network:
         ipv4_address: 173.17.0.7
@@ -78,8 +74,6 @@ services:
     image: mongo:latest
     container_name: shard1-1
     restart: always
-    ports:
-      - "27011:27018"
     networks:
       app-network:
         ipv4_address: 173.17.0.8
@@ -102,8 +96,6 @@ services:
     image: mongo:latest
     container_name: shard1-2
     restart: always
-    ports:
-      - "27012:27018"
     networks:
       app-network:
         ipv4_address: 173.17.0.9
@@ -126,8 +118,6 @@ services:
     image: mongo:latest
     container_name: shard1-3
     restart: always
-    ports:
-      - "27013:27018"
     networks:
       app-network:
         ipv4_address: 173.17.0.10
@@ -151,8 +141,6 @@ services:
     image: mongo:latest
     container_name: shard2-1
     restart: always
-    ports:
-      - "27021:27019"
     networks:
       app-network:
         ipv4_address: 173.17.0.11
@@ -176,8 +164,6 @@ services:
     image: mongo:latest
     container_name: shard2-2
     restart: always
-    ports:
-      - "27022:27019"
     networks:
       app-network:
         ipv4_address: 173.17.0.12
@@ -201,8 +187,6 @@ services:
     image: mongo:latest
     container_name: shard2-3
     restart: always
-    ports:
-      - "27023:27019"
     networks:
       app-network:
         ipv4_address: 173.17.0.13
