@@ -73,6 +73,6 @@ exit();
 EOF
 
 docker compose exec -T redis_1 sh <<EOF
-echo "yes" | redis-cli --cluster create redis_1:6379 redis_2:6379 redis_3:6379 redis_4:6379 redis_5:6379 redis_6:6379 --cluster-replicas 1
+echo "yes" | redis-cli --cluster create 173.17.0.10:6379 173.17.0.11:6379 173.17.0.12:6379 173.17.0.13:6379 173.17.0.14:6379 173.17.0.15:6379 --cluster-replicas 1
 EOF
 

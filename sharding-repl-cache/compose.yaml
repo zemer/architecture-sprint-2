@@ -8,14 +8,16 @@ services:
     image: kazhem/pymongo_api:1.0.0
     depends_on:
       - router
+      - redis_1
     ports:
       - 8080:8080
     environment:
-      MONGODB_URL: "mongodb://router"
+      MONGODB_URL: "mongodb://173.17.0.2"
       MONGODB_DATABASE_NAME: "somedb"
-      REDIS_URL: "redis://redis_1:6379"
+      REDIS_URL: "redis://173.17.0.10:6379"
     networks:
       app-network:
+        ipv4_address: 173.17.0.20
 
   #роутер
   router:
@@ -24,6 +26,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.2
     command: [
         "mongos", #обычная mongo в режиме роутера
         "--configdb",
@@ -52,6 +55,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.3
     volumes:
       - config-data:/data/db
     command: [
@@ -74,6 +78,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.4
     volumes:
       - shard1-1-data:/data/db
     command: [
@@ -95,6 +100,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.5
     volumes:
       - shard1-2-data:/data/db
     command: [
@@ -116,6 +122,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.6
     volumes:
       - shard1-3-data:/data/db
     command: [
@@ -138,6 +145,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.7
     volumes:
       - shard2-1-data:/data/db
     command: [
@@ -160,6 +168,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.8
     volumes:
       - shard2-2-data:/data/db
     command: [
@@ -182,6 +191,7 @@ services:
     restart: always
     networks:
       app-network:
+        ipv4_address: 173.17.0.9
     volumes:
       - shard2-3-data:/data/db
     command: [
@@ -208,6 +218,7 @@ services:
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       app-network:
+        ipv4_address: 173.17.0.10
 
   redis_2:
     image: "redis:latest"
@@ -220,6 +231,7 @@ services:
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       app-network:
+        ipv4_address: 173.17.0.11
 
   redis_3:
     image: "redis:latest"
@@ -232,6 +244,7 @@ services:
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       app-network:
+        ipv4_address: 173.17.0.12
 
   redis_4:
     image: "redis:latest"
@@ -244,6 +257,7 @@ services:
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       app-network:
+        ipv4_address: 173.17.0.13
 
   redis_5:
     image: "redis:latest"
@@ -256,6 +270,7 @@ services:
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       app-network:
+        ipv4_address: 173.17.0.14
 
   redis_6:
     image: "redis:latest"
@@ -268,6 +283,7 @@ services:
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       app-network:
+        ipv4_address: 173.17.0.15
 
 networks:
   app-network:
