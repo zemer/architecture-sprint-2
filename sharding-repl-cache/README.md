@@ -14,12 +14,9 @@ docker compose up -d
 
 ```shell
 ./scripts/count.sh
-EOF
 ```
 
 ## Как проверить
-
-### Если вы запускаете проект на локальной машине
 
 Откройте в браузере http://localhost:8080
 
