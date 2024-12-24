@@ -1,6 +1,10 @@
 # pymongo-api
 
-Запуск
+## Схема
+
+sprint2.drawio
+
+## Запуск
 
 ```shell
 cd ./sharding-repl-cache
