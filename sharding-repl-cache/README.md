@@ -1,15 +1,5 @@
 # pymongo-api
 
-## Схема
-
-sprint2.drawio
-
-## Запуск
-
-```shell
-cd ./sharding-repl-cache
-```
-
 ```shell
 docker compose up -d
 ```

@@ -1,15 +1,5 @@
 # pymongo-api
 
-## Схема
-
-sprint2.drawio
-
-## Запуск
-
-```shell
-cd ./sharding-repl-cache
-```
-
 ```shell
 docker compose up -d
 ```
@@ -27,6 +17,8 @@ docker compose up -d
 ```
 
 ## Как проверить
+
+### Если вы запускаете проект на локальной машине
 
 Откройте в браузере http://localhost:8080
 
